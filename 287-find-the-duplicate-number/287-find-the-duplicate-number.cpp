@@ -13,50 +13,6 @@ public:
                 break;
             }
         }
-        while(l<r)
-        {
-            if(nums[l]==nums[r])
-            {
-                ans=nums[l];
-                break;
-            }
-            else 
-            {
-                l++;
-                r--;
-            }
-        }
-        l=0;
-         r=nums.size()-1;
-        while(l<r)
-        {
-            if(nums[l]==nums[r])
-            {
-                ans=nums[l];
-                break;
-            }
-            else 
-            {
-               
-                r--;
-            }
-        }
-         l=0;
-         r=nums.size()-1;
-        while(l<r)
-        {
-            if(nums[l]==nums[r])
-            {
-                ans=nums[l];
-                break;
-            }
-            else 
-            {
-                l++;
-               
-            }
-        }
-        
         return ans;
     }
 };
