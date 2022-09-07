@@ -1,10 +1,3 @@
-/*
- * @lc app=leetcode id=43 lang=cpp
- *
- * [43] Multiply Strings
- */
-
-// @lc code=start
 class Solution {
 public:
     string multiply(string num1, string num2) {
@@ -25,9 +18,6 @@ public:
             }
         }
 
-        // for(auto it:prod)
-        // cout<<it<<" ";
-        // return "0";
         int idx=0;
         string ans;
         while(idx<prod.size() and prod[idx]==0)
@@ -39,5 +29,3 @@ public:
         return ans;
     }
 };
-// @lc code=end
-
