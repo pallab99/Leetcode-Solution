@@ -10,7 +10,6 @@ public:
         return a.second<b.second;
         return a.first<b.first;});
     vector<int> ans;
- //   debug(vp);
     for (int i = 0; i < k; i++)
         ans.push_back(vp[i].second);
         sort(ans.begin(),ans.end());
