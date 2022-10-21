@@ -13,17 +13,10 @@ public:
         res = max(res, mp[s[i]]);
         if (i == res)
         {
-            if (x == 0)
-            {
-                ans.push_back(res + 1);
-                x = res + 1;
-            }
-            else
-            {
-
+            
                 ans.push_back(res - x + 1);
                 x = res + 1;
-            }
+            
         }
     }
     return ans;
