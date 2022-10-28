@@ -5,9 +5,8 @@ public:
     vector<vector<int>> ans;
     for (int i = 0; i < points.size(); i++)
     {
-
-        double x = (points[i][0] - 0) * (points[i][0] - 0);
-        double y = (points[i][1] - 0) * (points[i][1] - 0);
+        double x = points[i][0] * points[i][0];
+        double y = points[i][1] * points[i][1];
         double dis = sqrt((x + y));
         pq.push({-dis, {points[i][0], points[i][1]}});
     }
