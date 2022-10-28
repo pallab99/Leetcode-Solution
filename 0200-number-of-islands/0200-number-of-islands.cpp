@@ -1,17 +1,24 @@
 class Solution {
 public:
-    int dx[4] = {-1, 0, 1, 0};
+    
+int dx[4] = {-1, 0, 1, 0};
 int dy[4] = {0, 1, 0, -1};
-void dfs(vector<vector<char>> &grid, int i, int j, int m, int n)
+bool valid(vector<vector<char>> &grid, int i, int j, int m, int n)
 {
     if (i < 0 or i >= m or j < 0 or j >= n or grid[i][j] == '0')
-        return;
+        return false;
+    return true;
+}
+void dfs(vector<vector<char>> &grid, int i, int j, int m, int n)
+{
+
     grid[i][j] = '0';
     for (int k = 0; k < 4; k++)
     {
         int x = i + dx[k];
         int y = j + dy[k];
-        dfs(grid, x, y, m, n);
+        if (valid(grid, x, y, m, n))
+            dfs(grid, x, y, m, n);
     }
 }
 int numIslands(vector<vector<char>> &grid)
