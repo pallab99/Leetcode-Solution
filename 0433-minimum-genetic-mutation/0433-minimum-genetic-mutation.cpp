@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minMutation(string start, string end, vector<string>& bank) {
-            unordered_set<string> st(bank.begin(), bank.end());
+    set<string> st(bank.begin(), bank.end());
     queue<string> q;
     q.push(start);
     int ans = 0;
