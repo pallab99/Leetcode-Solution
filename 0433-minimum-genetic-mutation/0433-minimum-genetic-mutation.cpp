@@ -1,7 +1,9 @@
 class Solution {
 public:
     int minMutation(string start, string end, vector<string>& bank) {
-    set<string> st(bank.begin(), bank.end());
+   map<string, int> mp;
+    for (auto it : bank)
+        mp[it] = 1;
     queue<string> q;
     q.push(start);
     int ans = 0;
@@ -14,23 +16,22 @@ public:
             q.pop();
             if (cur == end)
                 return ans;
-            st.erase(cur);
-
+            mp.erase(cur);
 
             for (int i = 0; i < 8; i++)
             {
                 string tmp = cur;
                 tmp[i] = 'A';
-                if (st.count(tmp))
+                if (mp.count(tmp))
                     q.push(tmp);
                 tmp[i] = 'C';
-                if (st.count(tmp))
+                if (mp.count(tmp))
                     q.push(tmp);
                 tmp[i] = 'G';
-                if (st.count(tmp))
+                if (mp.count(tmp))
                     q.push(tmp);
                 tmp[i] = 'T';
-                if (st.count(tmp))
+                if (mp.count(tmp))
                     q.push(tmp);
             }
         }
